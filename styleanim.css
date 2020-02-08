@@ -1,0 +1,73 @@
+body {
+	margin: 0px;
+	padding: 300px;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	background: #050210;
+}
+
+#glow_krug {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+	animation: animacija 1s linear infinite;
+}	
+
+@keyframes animacija {
+	
+	0% {
+		transform: rotate(0deg);
+	}
+	
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+#glow_krug span {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+}
+#glow_krug span:nth-child(1) {
+	filter: blur(40px);
+}
+#glow_krug span:nth-child(2) {
+	filter: blur(80px);
+}
+#glow_krug::after {
+	content: " ";
+	position: fixed;
+	top: 10px;
+	left: 10px;
+	right: 10px;
+	bottom: 10px;
+	background: black;
+	border-radius: 50px;
+}
+.sredina_krug {
+	background: #050210;
+	margin-top: 45px;
+	height: 15px;
+	width: 15px;
+	border-radius: 50%;
+	
+	
+	transform: scale(1);
+	animation: sredina 2s infinite;
+}
+@keyframes sredina {
+	0%{
+		transform: scale(0);
+	}
+
+	
+	100% {
+		transform: scale(5);
+	}
+}
